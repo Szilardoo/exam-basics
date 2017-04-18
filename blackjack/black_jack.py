@@ -38,8 +38,13 @@ class Deck():
         self.number_of_colors = ""
         self.color_counter()
 
+    def draw(self):
+        top_card = self.list_of_cards[-2] + " " + self.list_of_cards[-1]
+        self.number -= 1
+        self.color_counter()
+        return top_card
+
     def color_counter(self):
-        number_of_colors = ""
         for i in range(self.number//4):
             for color in self.card.color:
                 self.list_of_cards.append(random.choice(self.card.value))
@@ -47,9 +52,14 @@ class Deck():
         for i in range(self.number%4):
             self.list_of_cards.append(random.choice(self.card.value))
             self.list_of_cards.append( self.card.color[(i-1)+1])
-        self.number_of_colors += str(self.number) + " cards - " + str(self.list_of_cards.count("Clubs")) + " Clubs, " + str(self.list_of_cards.count("Diamonds")) + " Diamonds, " + str(self.list_of_cards.count("Hearts")) + " Hearts, " + str(self.list_of_cards.count("Spades")) + " Spades"
-        print(self.list_of_cards)
-        print(self.number_of_colors)
+        self.number_of_colors = str(self.number) + " cards - " + str(self.list_of_cards.count("Clubs")) + " Clubs, " + str(self.list_of_cards.count("Diamonds")) + " Diamonds, " + str(self.list_of_cards.count("Hearts")) + " Hearts, " + str(self.list_of_cards.count("Spades")) + " Spades"
+        return self.number_of_colors
+
+    def __str__(self):
         return self.number_of_colors
 
 deck = Deck(12)
+print(deck)
+top_card = deck.draw()
+print(top_card)
+print(deck)
