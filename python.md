@@ -46,4 +46,11 @@ The application is accepted if:
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+[The constructor is always written as a function called __init__().It must always take as its first argument a reference to the instance being constructed. This is typically called self. It has to be called immediately after an instance of the class is created. Every parameter here is the class own parameters. For example:
+
+class Example():
+
+    def __init__(self, parameter_a):
+        self.variable_a = parameter_a
+        self.variable_b = 5
+]
