@@ -12,6 +12,9 @@ class Copy():
     def __init__(self, source = "[source]", destination = "[destination]"):
         self.source = source
         self.destination = destination
+        self.opportunities()
+
+    def opportunities(self):
         if self.source == "[source]" and self.destination == "[destination]":
             print("copy " + self.source + self.destination)
         elif self.source != "[source]" and self.destination == "[destination]":
