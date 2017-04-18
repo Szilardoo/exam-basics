@@ -39,6 +39,8 @@ class Deck():
 
     def draw(self):
         top_card = self.list_of_cards[-2] + " " + self.list_of_cards[-1]
+        self.list_of_cards[-1] = ""
+        self.list_of_cards[-2] = ""
         self.number -= 1
         self.color_counter()
         return top_card
@@ -59,6 +61,9 @@ class Deck():
         return self.number_of_colors
 
 deck = Deck(12)
+print(deck)
+top_card = deck.draw()
+print(top_card)
 print(deck)
 top_card = deck.draw()
 print(top_card)
