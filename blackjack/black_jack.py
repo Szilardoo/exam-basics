@@ -34,7 +34,6 @@ class Deck():
     def __init__(self, number):
         self.number = number
         self.card = Card()
-        self.list_of_cards = []
         self.number_of_colors = ""
         self.color_counter()
 
@@ -45,6 +44,7 @@ class Deck():
         return top_card
 
     def color_counter(self):
+        self.list_of_cards = []
         for i in range(self.number//4):
             for color in self.card.color:
                 self.list_of_cards.append(random.choice(self.card.value))
