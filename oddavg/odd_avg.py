@@ -15,7 +15,3 @@ def odd_average(list_of_numbers):
             return 0
     except:
         return "That is not a list."
-
-print(odd_average([1,2,3,4,5,6,7,8]))
-print(odd_average(1))
-print(odd_average([2,4]))
